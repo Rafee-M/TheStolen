@@ -55,7 +55,7 @@ It is part of a university course project, so outside pull requests aren't neede
 ### Features:
 
 #### Classes:
-
-1. Character (name, atrributes)
-2. Inventory
-3. Random generated choice
+- [x] Character (name, atrributes) (needs checking)
+- [x] Inventory (needs checking)
+- [ ] Random generation classes
+- [ ] Find more classes
