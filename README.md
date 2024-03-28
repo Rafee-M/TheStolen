@@ -11,7 +11,8 @@
 
 <p align="center">
 
-   <a href="https://hits.sh/github.com/silentsoft/hits/"><img alt="Hits" src="https://hits.sh/github.com/supunlakmal/thismypc.svg"/></a> 
+   <a href="https://hits.sh/github.com/silentsoft/hits/">
+   <img alt="Hits" src="https://img.shields.io/endpoint?url=https%3A%2F%2Fhits.dwyl.com%2FRafee-M%2FTheYoungWitcher.json%3Fcolor%3Dbrightgreen"/></a> 
   <a href="https://github.com/Rafee-M/TheYoungWitcher/commits/main">
     <img src="https://img.shields.io/github/last-commit/Rafee-M/TheYoungWitcher.svg?style=flat-square&logo=github&logoColor=white"
          alt="GitHub last commit">
