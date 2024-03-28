@@ -44,7 +44,7 @@ It is part of a university course project, so outside pull requests aren't neede
 </table>
 
 
-## To-do:
+## Roadmap:
 
 ### Features:
 
