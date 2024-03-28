@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href=""><img src="https://raw.githubusercontent.com/Rafee-M/TheYoungWitcher/main/docs/images/logo/logo-banner.png" width="870" height="271" crossorigin></a>
+  <a href=""><img src="https://raw.githubusercontent.com/Rafee-M/TheYoungWitcher/main/docs/images/logo/logo-banner small.png" crossorigin></a>
 </h1>
 
 <h4 align="center"> A medival text based RPG game built with Java and ❤</h4>
