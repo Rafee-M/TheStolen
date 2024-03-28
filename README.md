@@ -21,9 +21,6 @@
     <a href="https://github.com/Rafee-M/TheYoungWitcher/pulls">
     <img src="https://img.shields.io/github/issues-pr-raw/Rafee-M/TheYoungWitcher.svg?style=flat-square&logo=github&logoColor=white"
          alt="GitHub pull requests">
-    <a>
-    <img src="https://img.shields.io/twitter/url/https/github.com/Rafee-M/TheYoungWitcher.svg?style=flat-square&logo=twitter"
-         alt="GitHub tweet">
 </p>
 
 
