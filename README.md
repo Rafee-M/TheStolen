@@ -1,16 +1,14 @@
-# The Stolen
+<h1 align="center">
+  <br>
+  <a href=""><img src="https://raw.githubusercontent.com/Rafee-M/TheYoungWitcher/main/docs/images/logo/logo-banner.png" width="870" height="271" crossorigin></a>
+</h1>
 
-<div align="center">
-    <a>
-        <img src="https://raw.githubusercontent.com/Rafee-M/TheYoungWitcher/main/docs/images/logo/logo-banner.png" width="500" height="156" crossorigin>
-    </a>
-</div>
+<h4 align="center"> A medival text based RPG game built with Java and ❤</h4>
 
-<br />
 <div align="center">
   
 [![forthebadge](https://forthebadge.com/images/badges/made-with-java.svg)](https://github.com/Rafee-M/TheYoungWitcher)
-<br />
+
 <p align="center">
     <a href="https://github.com/Rafee-M/TheYoungWitcher/commits/main">
     <img src="https://img.shields.io/github/last-commit/Rafee-M/TheYoungWitcher.svg?style=flat-square&logo=github&logoColor=white"
@@ -26,7 +24,26 @@
 
 </div>
 
-> A text based RPG game built with Java and ❤
+---
+
+<table>
+<tr>
+<td>
+  
+**The Stolen** is a text-based RPG game based in the 12th century. It implements various aspects of Object Oriented Programming such as encapsulation and abstraction, and delivers a game with modern UI, multiple scenarios and endings, advanced game mechanics, and much more.
+
+It is part of a university course project, so outside pull requests aren't needed. But feel free to open issues regarding bugs and feature requests!
+
+//![Insert Code Snipper](code snipper screenshot link)
+<p align="right">
+<sub>(Preview)</sub>
+</p>
+
+</td>
+</tr>
+</table>
+
+
 ## To-do:
 
 ### Features:
