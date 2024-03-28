@@ -12,13 +12,13 @@
 [![forthebadge](https://forthebadge.com/images/badges/made-with-java.svg)](https://github.com/Rafee-M/TheYoungWitcher)
 <br />
 <p align="center">
-    <a href="https://github.com/ArmynC/ArminC-AutoExec/commits/master">
+    <a href="https://github.com/Rafee-M/TheYoungWitcher/commits/main">
     <img src="https://img.shields.io/github/last-commit/Rafee-M/TheYoungWitcher.svg?style=flat-square&logo=github&logoColor=white"
          alt="GitHub last commit">
-    <a href="https://github.com/ArmynC/ArminC-AutoExec/issues">
+    <a href="https://github.com/Rafee-M/TheYoungWitcher/issues">
     <img src="https://img.shields.io/github/issues-raw/Rafee-M/TheYoungWitcher.svg?style=flat-square&logo=github&logoColor=white"
          alt="GitHub issues">
-    <a href="https://github.com/ArmynC/ArminC-AutoExec/pulls">
+    <a href="https://github.com/Rafee-M/TheYoungWitcher/pulls">
     <img src="https://img.shields.io/github/issues-pr-raw/Rafee-M/TheYoungWitcher.svg?style=flat-square&logo=github&logoColor=white"
          alt="GitHub pull requests">
     <a>
