@@ -10,7 +10,9 @@
 [![forthebadge](https://forthebadge.com/images/badges/made-with-java.svg)](https://github.com/Rafee-M/TheYoungWitcher)
 
 <p align="center">
-    <a href="https://github.com/Rafee-M/TheYoungWitcher/commits/main">
+
+   <a href="https://hits.sh/github.com/silentsoft/hits/"><img alt="Hits" src="https://hits.sh/github.com/supunlakmal/thismypc.svg"/></a> 
+  <a href="https://github.com/Rafee-M/TheYoungWitcher/commits/main">
     <img src="https://img.shields.io/github/last-commit/Rafee-M/TheYoungWitcher.svg?style=flat-square&logo=github&logoColor=white"
          alt="GitHub last commit">
     <a href="https://github.com/Rafee-M/TheYoungWitcher/issues">
