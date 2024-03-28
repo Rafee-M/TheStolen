@@ -8,7 +8,6 @@
 <div align="center">
   
 [![forthebadge](https://forthebadge.com/images/badges/made-with-java.svg)](https://github.com/Rafee-M/TheYoungWitcher)
-
 <p align="center">
 
    <a href="">
