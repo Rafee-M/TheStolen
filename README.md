@@ -8,8 +8,6 @@
 <div align="center">
   
 [![forthebadge](https://forthebadge.com/images/badges/made-with-java.svg)](https://github.com/Rafee-M/TheYoungWitcher)
-[![HitCount](https://hits.dwyl.com/Rafee-M/TheYoungWitcher.svg?style=flat-square)](http://hits.dwyl.com/Rafee-M/TheYoungWitcher)
-<p align="center">
 
    <a href="">
    <img alt="Hits" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fhits.dwyl.com%2FRafee-M%2FTheYoungWitcher.json&query=%24.message&style=flat&logo=github&label=visits&color=brightgreen"/></a> 
