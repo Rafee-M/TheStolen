@@ -38,7 +38,7 @@
 
 It is part of a university course project, so outside pull requests aren't needed. But feel free to open issues regarding bugs and feature requests!
 
-//![Insert Code Snipper](code snipper screenshot link)
+![The Stolen](https://raw.githubusercontent.com/Rafee-M/TheYoungWitcher/main/docs/images/preview/code%20preview%20-%201.png)
 <p align="right">
 <sub>(Preview)</sub>
 </p>
