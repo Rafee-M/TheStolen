@@ -29,7 +29,7 @@ public class playerAttributes {
     public playerAttributes(){
         
     }
-    //setters direct stats
+    //setters - direct stats
     public void setName(String name){
         this.name = name;
     }
@@ -42,7 +42,7 @@ public class playerAttributes {
     public void setMaxDamage(int maxDamage){
         this.maxDamage = maxDamage;
     }
-    //inventory
+    //setters - inventory
     public void setHealthPotion(){
         this.healthPotion++;
     }
@@ -73,7 +73,37 @@ public class playerAttributes {
         }
     }
     
-    //setters
+    //getters - direct stats
+    public String getName(){
+        return this.name;
+    }
+    public int getMaxHealth(){
+        return this.maxHealth;
+    }
+    public int getHealth(){
+        return this.health;
+    }
+    public int getMaxDamage(){
+        return this.maxDamage;
+    }
+    //getters - inventory
+    public int getHealthPotion(){
+        return this.healthPotion;
+    }
+    
+    //getters - attriutes
+    public int getStrength(){
+        return this.strength;
+    }
+    public int getCharisma(){
+        return this.maxHealth;
+    }
+    public int getStamina(){
+        return this.stamina;
+    }
+    public int getIntelligence(){
+        return this.intelligence;
+    }
     
     
 }
