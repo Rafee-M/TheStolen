@@ -16,7 +16,7 @@
 </p>
 
 <p align="center">
-  <a href="#features">features</a>
+  <a href="#features">Features</a>
   <a href="#roadmap">Roadmap</a>
 </p>
 
@@ -55,3 +55,7 @@ It is part of a university course project, so outside pull requests aren't neede
 - Prepare a combat system
 - Design levels which would be set in: swamps, caves, etc
 - Build a minimalistic GUI with dark mode and font size customisation for better accessibility
+
+## Choice Implementation:
+- A choice tree will be constructed for visualising the connection between choices and outcomes
+- Each major choice will be divided into separate classes. Example: first 3 major choices will be in Choice1 class and they will give connect to respective choices in Choice2 class
