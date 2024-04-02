@@ -5,9 +5,7 @@ package rpg;
  * @author Rafee-M
  */
 public class playerAttributes {
-    
     //variables
-    
     //player direct stats
     private String name;
     private int maxHealth = 50;
@@ -26,9 +24,7 @@ public class playerAttributes {
     private int charisma = 0;
     
     //empty constructor
-    public playerAttributes(){
-        
-    }
+    public playerAttributes(){}
     //setters - direct stats
     public void setName(String name){
         this.name = name;
@@ -46,6 +42,7 @@ public class playerAttributes {
     public void setHealthPotion(){
         this.healthPotion++;
     }
+
     
     //setters - player attributes
     public void setStrength(){
@@ -89,6 +86,9 @@ public class playerAttributes {
     //getters - inventory
     public int getHealthPotion(){
         return this.healthPotion;
+    }
+    public int getHealthPotionHeal(){
+    return this.healthPotionHeal;
     }
     
     //getters - attriutes
