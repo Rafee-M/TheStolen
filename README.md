@@ -16,6 +16,7 @@
 </p>
 
 <p align="center">
+  <a href="#features">features</a>
   <a href="#roadmap">Roadmap</a>
 </p>
 
@@ -41,12 +42,16 @@ It is part of a university course project, so outside pull requests aren't neede
 </table>
 
 
+## Features
+- An ability point system with player upgradable character attributes
+- RNG (Random Number Generation) for various actions like attacking, healing and other player choices
+- Foundation of the story
+   - **Background:** In the medieval era, darkness descends upon villages, swallowing them whole without a trace. As a young adult residing in one such village, you witness the unexplained vanishings firsthand. When your own family succumbs to the mysterious fate, leaving you bereft and alone, you resolve to unravel the enigma. With courage as your armor, you venture into the dense, foreboding forest that harbors secrets darker than the night itself, determined to uncover the truth and rescue your loved ones from the clutches of the unknown.
+
 ## Roadmap:
-
-### Features:
-
-#### Classes:
-- [x] Character (name, atrributes) (needs checking)
-- [x] Inventory (needs checking)
-- [ ] Random generation classes
-- [ ] Find more classes
+- Addition of more classes: monster, story choice levels, etc
+- Add implementation for other applicable classes in RNG class
+- Add choices and subsequent story pathways to chose choices
+- Prepare a combat system
+- Design levels which would be set in: swamps, caves, etc
+- Build a minimalistic GUI with dark mode and font size customisation for better accessibility
