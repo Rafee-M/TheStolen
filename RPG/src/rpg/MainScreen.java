@@ -13,7 +13,7 @@ public class MainScreen extends javax.swing.JFrame {
     /**
      * Creates new form NewJFrame1
      */
-    playerAttributes p1 = new playerAttributes();
+    public static playerAttributes p1 = new playerAttributes();
     public MainScreen() {
         initComponents();
         
@@ -36,7 +36,7 @@ public class MainScreen extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        MainStoryText = new javax.swing.JTextArea();
         jRadioButton2 = new javax.swing.JRadioButton();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton3 = new javax.swing.JRadioButton();
@@ -113,14 +113,15 @@ public class MainScreen extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextArea1.setColumns(20);
-        jTextArea1.setLineWrap(true);
-        jTextArea1.setRows(5);
-        jTextArea1.setWrapStyleWord(true);
-        jTextArea1.setAutoscrolls(false);
-        jTextArea1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jScrollPane1.setViewportView(jTextArea1);
+        MainStoryText.setBackground(new java.awt.Color(255, 255, 255));
+        MainStoryText.setColumns(20);
+        MainStoryText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        MainStoryText.setLineWrap(true);
+        MainStoryText.setRows(5);
+        MainStoryText.setWrapStyleWord(true);
+        MainStoryText.setAutoscrolls(false);
+        MainStoryText.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jScrollPane1.setViewportView(MainStoryText);
 
         buttonGroup1.add(jRadioButton2);
         jRadioButton2.setText("jRadioButton2");
@@ -251,8 +252,20 @@ public class MainScreen extends javax.swing.JFrame {
             }
         });
     }
+    
+    public void newName(String name){
+        p1.setName(name);
+        System.out.println(p1.getName());
+    }
+    public void newFont(int areaFontSize){
+        MainStoryText.setFont(new java.awt.Font("Segoe UI", 0, areaFontSize));
+        MainStoryText.repaint();
+        repaint();  
+        System.out.println(areaFontSize);
+    }
 
     // Variables declaration - do not modify                     
+    private javax.swing.JTextArea MainStoryText;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton choiceConfirm;
     private javax.swing.JButton jButton1;
@@ -263,7 +276,6 @@ public class MainScreen extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration                   
