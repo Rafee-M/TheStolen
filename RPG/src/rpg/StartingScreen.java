@@ -1,23 +1,25 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package rpg;
-
-import static rpg.SettingsPanel.areaFontSize;
 
 /**
  *
- * @author Ralty
+ * @author Rafee-M
  */
 public class StartingScreen extends javax.swing.JFrame {
 
-    /**
+
+/**
      * Creates new form StartingScreen
      */
-    public StartingScreen() {
+    int count = 0;
+    static int frame = 0;
+    MainScreen mainsc = new MainScreen();
+    
+        public StartingScreen() {
         initComponents();
+        setLocationRelativeTo(null); // Set start position to center of the screen
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -31,13 +33,15 @@ public class StartingScreen extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        StartSettingsButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
-        choiceConfirm = new javax.swing.JButton();
+        IntroContinue = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jTextField1 = new javax.swing.JTextField();
+        IntroText = new javax.swing.JTextArea();
+        NewNameInput = new javax.swing.JTextField();
+        IntroTextQ = new javax.swing.JTextField();
+        EnterNameLabel = new javax.swing.JLabel();
 
         jButton2.setText("jButton2");
 
@@ -47,16 +51,16 @@ public class StartingScreen extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
 
-        jButton1.setBackground(new java.awt.Color(51, 51, 51));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/settings-icon-14951.png"))); // NOI18N
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton1.setName("SettingsButton"); // NOI18N
-        jButton1.setSelected(true);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        StartSettingsButton.setBackground(new java.awt.Color(51, 51, 51));
+        StartSettingsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/settings-icon-14951.png"))); // NOI18N
+        StartSettingsButton.setBorderPainted(false);
+        StartSettingsButton.setContentAreaFilled(false);
+        StartSettingsButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        StartSettingsButton.setName("SettingsButton"); // NOI18N
+        StartSettingsButton.setSelected(true);
+        StartSettingsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                StartSettingsButtonActionPerformed(evt);
             }
         });
 
@@ -80,8 +84,8 @@ public class StartingScreen extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 402, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(StartSettingsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -92,67 +96,103 @@ public class StartingScreen extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(StartSettingsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        choiceConfirm.setBackground(new java.awt.Color(51, 51, 51));
-        choiceConfirm.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        choiceConfirm.setForeground(new java.awt.Color(255, 255, 255));
-        choiceConfirm.setText("Continue");
-        choiceConfirm.addActionListener(new java.awt.event.ActionListener() {
+        IntroContinue.setBackground(new java.awt.Color(51, 51, 51));
+        IntroContinue.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        IntroContinue.setForeground(new java.awt.Color(255, 255, 255));
+        IntroContinue.setText("Continue");
+        IntroContinue.setBorderPainted(false);
+        IntroContinue.setFocusable(false);
+        IntroContinue.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                choiceConfirmActionPerformed(evt);
+                IntroContinueActionPerformed(evt);
             }
         });
 
-        jTextArea1.setEditable(false);
-        jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
-        jTextArea1.setLineWrap(true);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("Welcome to - The Stolen! A text based RPG game set in the ancient times. Get ready for an immersive experience taking you through what it means to be a team. Are you ready to make right choices and deal with the twists that come a long the way? \n\nBeware, you never know how bad the wrong choice might cost you!\n\n");
-        jTextArea1.setWrapStyleWord(true);
-        jTextArea1.setBorder(new javax.swing.border.MatteBorder(null));
-        jTextArea1.setFocusable(false);
-        jScrollPane2.setViewportView(jTextArea1);
+        IntroText.setEditable(false);
+        IntroText.setBackground(new java.awt.Color(255, 255, 255));
+        IntroText.setColumns(20);
+        IntroText.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        IntroText.setForeground(new java.awt.Color(0, 0, 0));
+        IntroText.setLineWrap(true);
+        IntroText.setRows(5);
+        IntroText.setText("Welcome to - The Stolen! A text based RPG game set in the ancient times. Get ready for an immersive experience taking you through what it means to be a team. Are you ready to make right choices and deal with the twists that come a long the way? \n\nBeware, you never know how bad the wrong choice might cost you!\n\n");
+        IntroText.setWrapStyleWord(true);
+        IntroText.setBorder(null);
+        IntroText.setFocusable(false);
+        jScrollPane2.setViewportView(IntroText);
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField1.setText("Ready To Proceed?");
+        NewNameInput.setBackground(new java.awt.Color(255, 255, 255));
+        NewNameInput.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        NewNameInput.setForeground(new java.awt.Color(0, 0, 0));
+        NewNameInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NewNameInputActionPerformed(evt);
+            }
+        });
+        NewNameInput.setVisible(false);
+
+        IntroTextQ.setEditable(false);
+        IntroTextQ.setBackground(new java.awt.Color(255, 255, 255));
+        IntroTextQ.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        IntroTextQ.setForeground(new java.awt.Color(0, 0, 0));
+        IntroTextQ.setText("Ready To Proceed?");
+        IntroTextQ.setAutoscrolls(false);
+        IntroTextQ.setBorder(null);
+        IntroTextQ.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IntroTextQActionPerformed(evt);
+            }
+        });
+
+        EnterNameLabel.setBackground(new java.awt.Color(255, 255, 255));
+        EnterNameLabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        EnterNameLabel.setForeground(new java.awt.Color(0, 0, 0));
+        EnterNameLabel.setText("Enter Name:");
+        EnterNameLabel.setVisible(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(182, 182, 182)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 797, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(138, 138, 138))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(439, 439, 439))
+                        .addComponent(IntroContinue, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(495, 495, 495))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(choiceConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(495, 495, 495))))
+                        .addComponent(EnterNameLabel)
+                        .addGap(522, 522, 522))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(NewNameInput, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(IntroTextQ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(439, 439, 439)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(112, 112, 112)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(77, 77, 77)
-                .addComponent(choiceConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(259, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(EnterNameLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(NewNameInput, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addComponent(IntroTextQ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53)
+                .addComponent(IntroContinue, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(256, 256, 256))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -163,27 +203,70 @@ public class StartingScreen extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 870, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void choiceConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_choiceConfirmActionPerformed
-        int i = 1;
-        //goes back to Main Screen
-        this.setVisible(false);
-        MainScreen mainsc = new MainScreen();
-        mainsc.newMainFont(areaFontSize); //sends newFontSize value
-        mainsc.setVisible(true);
-        mainsc.storyText();
-    }//GEN-LAST:event_choiceConfirmActionPerformed
+    private void IntroContinueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IntroContinueActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        //Ask for player name inout
+        if (count == 0) {
+            IntroTextQ.setVisible(false);
+            NewNameInput.setVisible(false);
+            IntroText.setText("\n\n\n\n\t          What should we call you?");
+            IntroText.repaint();
+            
+            EnterNameLabel.setVisible(true);
+            NewNameInput.setVisible(true);
+            NewNameInput.setVisible(true);
+            count++;
+
+        }
+
+        //check if input name is empty
+        else if (count == 1) {
+            
+            String newName = NewNameInput.getText().trim();
+            
+            if (newName.isBlank()) {
+                IntroText.setText("\n\n\n\n\t       Your name cannot be empty!");
+            } 
+            
+            //if not empty send to MainScreen and itialize it
+            if(!newName.isBlank()){
+                this.mainsc = new MainScreen(this.getX(), this.getY()); //ensures that it starts at the position where starting screen is moved to
+                mainsc.newName(newName);
+                //goes back to Main Screen
+                this.setVisible(false);
+                mainsc.setVisible(true);
+                frame = 1;
+                mainsc.storyText();
+            }
+
+        }
+
+    }//GEN-LAST:event_IntroContinueActionPerformed
+
+    private void StartSettingsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartSettingsButtonActionPerformed
         this.setVisible(false);
-        SettingsPanel settings = new SettingsPanel();
+        SettingsPanel settings = new SettingsPanel(this.getX(), this.getY());
+        settings.setStartingScreen(this, 0);
         settings.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+        if (frame == 1) {
+            settings.setMainScreen(mainsc, frame);
+        }
+
+    }//GEN-LAST:event_StartSettingsButtonActionPerformed
+
+    private void IntroTextQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IntroTextQActionPerformed
+
+    }//GEN-LAST:event_IntroTextQActionPerformed
+
+    private void NewNameInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewNameInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NewNameInputActionPerformed
 
     /**
      * @param args the command line arguments
@@ -220,16 +303,19 @@ public class StartingScreen extends javax.swing.JFrame {
         });
     }
 
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton choiceConfirm;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel EnterNameLabel;
+    private javax.swing.JButton IntroContinue;
+    private javax.swing.JTextArea IntroText;
+    private javax.swing.JTextField IntroTextQ;
+    private javax.swing.JTextField NewNameInput;
+    private javax.swing.JButton StartSettingsButton;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
