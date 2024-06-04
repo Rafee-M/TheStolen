@@ -1,20 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package rpg;
 
 /**
  *
- * @author Ralty
+ * @author Rafee-M
  */
+
 public class RPG {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+
+        StartingScreen stsc = new StartingScreen();
+        stsc.setVisible(true);
     }
-    
+
 }
