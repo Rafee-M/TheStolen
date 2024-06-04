@@ -6,9 +6,13 @@ package rpg;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import javax.swing.JFileChooser;
 import javax.swing.JTextField;
 
 /**
@@ -16,8 +20,6 @@ import javax.swing.JTextField;
  * @author Ralty
  */
 public class SettingsPanel extends javax.swing.JFrame {
-
-    
 
     /**
      * Creates new form NewJFrame3
@@ -35,6 +37,7 @@ public class SettingsPanel extends javax.swing.JFrame {
     private static MainScreen mainsc;
     private static StartingScreen stsc;
     public static int frame;
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
@@ -58,6 +61,8 @@ public class SettingsPanel extends javax.swing.JFrame {
         FontSize = new javax.swing.JButton();
         FontSizePlus = new javax.swing.JButton();
         FontSizeMinus = new javax.swing.JButton();
+        IncorrectLoadFile = new javax.swing.JLabel();
+        NameError = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -239,6 +244,16 @@ public class SettingsPanel extends javax.swing.JFrame {
             }
         });
 
+        IncorrectLoadFile.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        IncorrectLoadFile.setForeground(new java.awt.Color(243, 90, 121));
+        IncorrectLoadFile.setText("Incorrect file. If renamed, please rename it to \"thestolen - save.txt\"");
+        IncorrectLoadFile.setVisible(false);
+
+        NameError.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        NameError.setForeground(new java.awt.Color(243, 90, 121));
+        NameError.setText("Set your name in the starting screen first");
+        NameError.setVisible(false);
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -252,9 +267,6 @@ public class SettingsPanel extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(478, 478, 478)
                         .addComponent(ChangeNameButton, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(448, 448, 448)
-                        .addComponent(ChangeNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(517, 517, 517)
                         .addComponent(NameConfirmButton))
@@ -270,8 +282,17 @@ public class SettingsPanel extends javax.swing.JFrame {
                                 .addComponent(NewGameButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(QuitButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(SaveButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(FontSize, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                .addContainerGap(457, Short.MAX_VALUE))
+                                .addComponent(FontSize, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(448, 448, 448)
+                        .addComponent(ChangeNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(349, 349, 349)
+                        .addComponent(IncorrectLoadFile))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(429, 429, 429)
+                        .addComponent(NameError)))
+                .addContainerGap(365, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -279,7 +300,9 @@ public class SettingsPanel extends javax.swing.JFrame {
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(SettingsLabel)
-                .addGap(97, 97, 97)
+                .addGap(59, 59, 59)
+                .addComponent(NameError)
+                .addGap(18, 18, 18)
                 .addComponent(ChangeNameButton)
                 .addGap(18, 18, 18)
                 .addComponent(ChangeNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -295,11 +318,13 @@ public class SettingsPanel extends javax.swing.JFrame {
                 .addComponent(SaveButton)
                 .addGap(45, 45, 45)
                 .addComponent(LoadButton)
-                .addGap(46, 46, 46)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(IncorrectLoadFile)
+                .addGap(18, 18, 18)
                 .addComponent(NewGameButton)
                 .addGap(42, 42, 42)
                 .addComponent(QuitButton)
-                .addContainerGap(114, Short.MAX_VALUE))
+                .addContainerGap(110, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -322,37 +347,46 @@ public class SettingsPanel extends javax.swing.JFrame {
 
     //Settings Menu Back Button
     private void SettingsBackButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                   
-        
-        //goes back to Main Screen
-        if(frame == 0){
 
+        //goes back to Main Screen
+        if (frame == 0) {
+
+            
             this.setVisible(false);
             stsc.setVisible(true);
         }
-        
-        if(frame == 1){
+
+        if (frame == 1) {
             this.setVisible(false);
             mainsc.newMainFont(areaFontSize); //sends newFontSize value
             mainsc.setVisible(true);
         }
-        
+
     }                                                  
 
     //Settings Menu - Change Name Button
     private void ChangeNameButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                 
-        ChangeNameTextField.setEnabled(true);
-        ChangeNameTextField.setText("");        
+
+        if(frame == 0){
+            NameError.setVisible(true);
+        }
+        
+        else if (frame == 1) {
+            ChangeNameTextField.setEnabled(true);
+            ChangeNameTextField.setText("");
+        }
+
     }                                                
 
     private void ChangeNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {                                                    
-        
+
     }                                                   
 
     private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
         System.out.println("hello");
         String filepath = (System.getProperty("user.home") + "/Documents/TheStolen/save.txt");
         try (FileWriter fwriter = new FileWriter(filepath)) {
-            
+
             BufferedWriter writer = new BufferedWriter(fwriter);
             writer.write(mainsc.getName() + "/t" + mainsc.getHealth() + "\t" + mainsc.getStoryCount() + mainsc.getStream() + "\t" + mainsc.getState() + "\t" + mainsc.getAreaFontSize());
             writer.write("Name, Health, Story Level, Stream, Story State, Font Size");
@@ -364,50 +398,74 @@ public class SettingsPanel extends javax.swing.JFrame {
 
     private void NameConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                  
 
+        if(frame == 0){
+            NameError.setVisible(true);
+        }
+        if (frame == 1) {
+            mainsc.newName(ChangeNameTextField.getText());
+        }
 
-        mainsc.newName(ChangeNameTextField.getText());
     }                                                 
 
-    private void newSettingsFont(int areaFontSize){
+    private void newSettingsFont(int areaFontSize) {
         this.areaFontSize = areaFontSize;
         System.out.println(this.areaFontSize);
     }
-    
+
     private void FontSizeActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        
+
     }                                        
 
     private void FontSizePlusActionPerformed(java.awt.event.ActionEvent evt) {                                             
-        
+
         //limited max font size to 50
-        if(++areaFontSize <= 50){  
-            FontSize.setText("[" + (areaFontSize) + "]" + "  Font Size");
+        if (areaFontSize+1 <= 50) {
+            FontSize.setText("[" + (++areaFontSize) + "]" + "  Font Size");
         }
     }                                            
 
     private void FontSizeMinusActionPerformed(java.awt.event.ActionEvent evt) {                                              
-        
+
         //limited minimuz font size to 10
-        if(--areaFontSize >= 10){
-            FontSize.setText("[" + (areaFontSize) + "]" + "  Font Size");
+        if (areaFontSize-1 >= 10) {
+            FontSize.setText("[" + (--areaFontSize) + "]" + "  Font Size");
         }
-        
+
     }                                             
 
     private void LoadButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        String path = (System.getProperty("user.home") + "/Documents/TheStolen/save.txt");
+
+        JFileChooser fileChooser = new JFileChooser();
+        int returnValue = fileChooser.showOpenDialog(this); //returns whethere user selected a file or cancelled
+        if (returnValue == JFileChooser.APPROVE_OPTION) { //if the value corresponds with a selected file    
+
+            try {
+                File loadFile = fileChooser.getSelectedFile(); //getting the selected file
+                if (loadFile.getName() == "thestolen - save.txt") {
+                    BufferedReader reader = new BufferedReader(new FileReader(loadFile));
+                    
+                } else {
+                    IncorrectLoadFile.setVisible(rootPaneCheckingEnabled);
+                }
+
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+
+
     }                                          
 
-    public void setStartingScreen(StartingScreen stsc, int frame){
+    public void setStartingScreen(StartingScreen stsc, int frame) {
         SettingsPanel.stsc = stsc;
         this.frame = frame;
     }
-    
-    public void setMainScreen(MainScreen mainsc, int frame){
+
+    public void setMainScreen(MainScreen mainsc, int frame) {
         SettingsPanel.mainsc = mainsc;
         this.frame = frame;
     }
-    
+
     /**
      * @param args the command line arguments
      */
@@ -450,8 +508,10 @@ public class SettingsPanel extends javax.swing.JFrame {
     private javax.swing.JButton FontSize;
     private javax.swing.JButton FontSizeMinus;
     private javax.swing.JButton FontSizePlus;
+    private javax.swing.JLabel IncorrectLoadFile;
     private javax.swing.JButton LoadButton;
     private javax.swing.JButton NameConfirmButton;
+    private javax.swing.JLabel NameError;
     private javax.swing.JButton NewGameButton;
     private javax.swing.JButton QuitButton;
     private javax.swing.JButton SaveButton;
