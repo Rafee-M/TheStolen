@@ -10,7 +10,7 @@ import javax.swing.event.DocumentListener;
 import rpg.project.Five;
 import rpg.project.Four;
 import rpg.project.One;
-import static rpg.project.RPGProject.playerName;
+import rpg.project.Six;
 import rpg.project.Three;
 import rpg.project.Two;
 
@@ -47,7 +47,7 @@ public class MainScreen extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        MainSettingsButton = new javax.swing.JButton();
         ToolbarHealth = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
@@ -64,16 +64,16 @@ public class MainScreen extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
 
-        jButton1.setBackground(new java.awt.Color(51, 51, 51));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/settings-icon-14951.png"))); // NOI18N
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton1.setName("SettingsButton"); // NOI18N
-        jButton1.setSelected(true);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        MainSettingsButton.setBackground(new java.awt.Color(51, 51, 51));
+        MainSettingsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/settings-icon-14951.png"))); // NOI18N
+        MainSettingsButton.setBorderPainted(false);
+        MainSettingsButton.setContentAreaFilled(false);
+        MainSettingsButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        MainSettingsButton.setName("SettingsButton"); // NOI18N
+        MainSettingsButton.setSelected(true);
+        MainSettingsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                MainSettingsButtonActionPerformed(evt);
             }
         });
 
@@ -112,7 +112,7 @@ public class MainScreen extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(MainSettingsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -125,7 +125,7 @@ public class MainScreen extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(MainSettingsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -259,13 +259,13 @@ public class MainScreen extends javax.swing.JFrame {
     }                                             
 
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void MainSettingsButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                   
         this.setVisible(false);
         SettingsPanel settings = new SettingsPanel();
         settings.setVisible(true);
         settings.setMainScreen(this, 1);
 
-    }                                        
+    }                                                  
 
     private void choiceConfirmActionPerformed(java.awt.event.ActionEvent evt) {                                              
 
@@ -283,29 +283,21 @@ public class MainScreen extends javax.swing.JFrame {
             MainStoryText.setText(a.getOnePart(i, p1.getName())); //sets the story text according to i and storyCount
             toggleRadio(false);
 
-        }
-
-        if (storyCount == 2 && i != 1) {
+        } else if (storyCount == 2 && i != 1) {
             MainStoryText.setText(b.getTwoPart(i, p1.getName()));
             toggleRadio(false);
-        }
-
-        if (storyCount == 3 && i != 1) {
+        } else if (storyCount == 3 && i != 1) {
 
             toggleRadio(false);
-            if (i > 2) {
-                MainStoryText.setText(c.getThreePart(i, p1.getName()));
-                i = 0;
-            }else if(i == 0){
-                storyCount++;
-                i = 1;
-            }
-        }
-
-        if (storyCount == 4 && i != 1) {
+        } else if (storyCount == 4 && i != 1) {
 
             toggleRadio(false);
             MainStoryText.setText(d.getFourPart(i, p1.getName()));
+        } else if (storyCount == 6 && i == 0) {
+            
+            //restart game after completion
+            storyCount = 1;
+            i = 1;
         }
         storyText();
         ToolbarHealth.setText("Chapter: " + String.valueOf(storyCount) + " | " + "Health: " + (String.valueOf(p1.getHealth()))); //sets health on the top left of the screen
@@ -317,6 +309,7 @@ public class MainScreen extends javax.swing.JFrame {
     Three c = new Three();
     Four d = new Four();
     Five e = new Five();
+    Six f = new Six();
     private void Radio2ActionPerformed(java.awt.event.ActionEvent evt) {                                       
         if (storyCount == 1) {
             i = 8;
@@ -441,7 +434,7 @@ public class MainScreen extends javax.swing.JFrame {
         if (storyCount == 2) {
             if (i == 1) { //start of Chapter 2
                 toggleRadio(true); //for choice for setting camp
-                MainStoryText.setText(b.getTwoPart(i, playerName));
+                MainStoryText.setText(b.getTwoPart(i, p1.getName()));
                 Radio1.setText(b.getTwoPart(i + 1, p1.getName())); //makes radio buttons visible and sets choice content
                 Radio2.setText(b.getTwoPart(i + 2, p1.getName()));
             }
@@ -464,16 +457,19 @@ public class MainScreen extends javax.swing.JFrame {
         //Chapter 3
         if (storyCount == 3) {
             if (i == 1) {
-                MainStoryText.setText(b.getTwoPart(7, playerName)); //Part 7 from Chapter 2 is printed 
+                MainStoryText.setText(b.getTwoPart(7, p1.getName())); //Part 7 from Chapter 2 is printed 
                 toggleRadio(true);
                 Radio1.setText(c.getThreePart(i, p1.getName())); //makes radio buttons visible and sets choice content
                 Radio2.setText(c.getThreePart(i + 1, p1.getName())); //choice for taking the stranger in your party.
             }
+            if (i > 2) {
+                MainStoryText.setText(c.getThreePart(i, p1.getName()));
+                i = 1;
+                storyCount++;
+            }
 
-        }
-
-        //Chapter 4
-        if (storyCount == 4) {
+        } //Chapter 4
+        else if (storyCount == 4) {
             //printng the story outcome of each stream from Chapter 3 and showing their choices
             if (i == 1) {
                 if (n == 1) {
@@ -495,9 +491,15 @@ public class MainScreen extends javax.swing.JFrame {
             }
         }
 
+        //Chapter 5
         if (storyCount == 5) {
             MainStoryText.setText(e.getFivePart(i, p1.getName()));
-            i = 1;
+            storyCount++;
+        } //Chapter 6
+        else if (storyCount == 6) {
+            MainStoryText.setText(f.getSixPart(i, p1.getName()));
+            choiceConfirm.setText("Restart");
+            i = 0;
         }
 
     }
@@ -542,21 +544,50 @@ public class MainScreen extends javax.swing.JFrame {
     public int getStream() {
         return this.n;
     }
+    
+    public int getState(){
+        return this.i;
+    }
 
     public int getAreaFontSize() {
         return this.areaFontSize;
+    }
+    
+    //for loading
+    public void setName(String name) {
+        p1.setName(name);
+    }
+
+    public void setHealth(int health) {
+        p1.setHealth(health);
+    }
+    
+    public void setStoryCount(int newStoryCount){
+        storyCount = newStoryCount;
+    }
+
+    public void setStream(int newStream) {
+        n = newStream;
+    }
+    
+    public void getState(int newState){
+        i = newState;
+    }
+
+    public void setAreaFontSize(int size) {
+        this.areaFontSize = size;
     }
 
 
     // Variables declaration - do not modify                     
     private javax.swing.JLabel DeathMessage;
+    private javax.swing.JButton MainSettingsButton;
     private javax.swing.JTextArea MainStoryText;
     private javax.swing.JRadioButton Radio1;
     private javax.swing.JRadioButton Radio2;
     private javax.swing.JTextField ToolbarHealth;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton choiceConfirm;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
