@@ -16,7 +16,7 @@ import rpg.project.Two;
 
 /**
  *
- * @author Rafee
+ * @author Rafee-M
  */
 public class MainScreen extends javax.swing.JFrame {
 
