@@ -16,7 +16,7 @@ import rpg.project.Two;
 
 /**
  *
- * @author Ralty
+ * @author Rafee
  */
 public class MainScreen extends javax.swing.JFrame {
 
@@ -24,15 +24,39 @@ public class MainScreen extends javax.swing.JFrame {
      * Creates new form NewJFrame1
      */
     private static playerAttributes p1 = new playerAttributes();
-
-    public MainScreen() {
-        initComponents();
-
-    }
     int areaFontSize = 18;
-    static int storyCount = 1;
-    static int i = 1;
-    static int n = 0;
+    private int storyCount = 1; //Story Level
+    static int i = 1; //Story State
+    static int n = 0; //Story Stream
+    private String saveString;
+    
+    public MainScreen() {
+        
+        initComponents();
+        //choiceConfirmActionPerformed(null); //// Invoke the method once when the app starts
+    }
+    
+    public MainScreen(int x, int y) {
+        
+        initComponents();
+        this.setLocation(x, y);
+        //choiceConfirmActionPerformed(null); //// Invoke the method once when the app starts
+    }
+    
+    //constructor overloading. Used when game state is loaded from settings
+    public MainScreen(String name, int health, int storyCount, int stream, int state, int fontSize, int x, int y) { 
+        
+        p1.setName(name);
+        p1.setHealth(health);
+        this.storyCount = storyCount;
+        this.n = stream;
+        this.i = state;
+        this.areaFontSize = fontSize;
+        this.setLocation(x, y);
+        initComponents();
+        choiceConfirmActionPerformed(null); //// Invoke the method once when the app starts
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -41,7 +65,7 @@ public class MainScreen extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
 
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
@@ -107,7 +131,7 @@ public class MainScreen extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(ToolbarHealth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(353, 353, 353)
+                .addGap(279, 279, 279)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -252,23 +276,25 @@ public class MainScreen extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>                        
+    }// </editor-fold>//GEN-END:initComponents
 
-    private void ToolbarHealthActionPerformed(java.awt.event.ActionEvent evt) {                                              
+    private void ToolbarHealthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToolbarHealthActionPerformed
 
-    }                                             
+    }//GEN-LAST:event_ToolbarHealthActionPerformed
 
 
-    private void MainSettingsButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+    private void MainSettingsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MainSettingsButtonActionPerformed
         this.setVisible(false);
-        SettingsPanel settings = new SettingsPanel();
+        SettingsPanel settings = new SettingsPanel(this.getX(), this.getY());
         settings.setVisible(true);
         settings.setMainScreen(this, 1);
+        
 
-    }                                                  
+    }//GEN-LAST:event_MainSettingsButtonActionPerformed
 
-    private void choiceConfirmActionPerformed(java.awt.event.ActionEvent evt) {                                              
+    private void choiceConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_choiceConfirmActionPerformed
 
+        saveString = ((getName() + "\t" + getHealth() + "\t" + getStoryCount() + "\t" + getStream() + "\t" + getState() + "\t" + getAreaFontSize())); //saves the progress of the game into a string
         //Resetting death message
         choiceConfirm.setText("Continue");
         DeathMessage.setVisible(false);
@@ -280,6 +306,7 @@ public class MainScreen extends javax.swing.JFrame {
             if (i == 8) {
                 p1.setHealth(p1.getHealth() - 5);
             }
+            
             MainStoryText.setText(a.getOnePart(i, p1.getName())); //sets the story text according to i and storyCount
             toggleRadio(false);
 
@@ -302,7 +329,7 @@ public class MainScreen extends javax.swing.JFrame {
         storyText();
         ToolbarHealth.setText("Chapter: " + String.valueOf(storyCount) + " | " + "Health: " + (String.valueOf(p1.getHealth()))); //sets health on the top left of the screen
 
-    }                                             
+    }//GEN-LAST:event_choiceConfirmActionPerformed
 
     One a = new One();
     Two b = new Two();
@@ -310,7 +337,7 @@ public class MainScreen extends javax.swing.JFrame {
     Four d = new Four();
     Five e = new Five();
     Six f = new Six();
-    private void Radio2ActionPerformed(java.awt.event.ActionEvent evt) {                                       
+    private void Radio2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Radio2ActionPerformed
         if (storyCount == 1) {
             i = 8;
             //p1.setHealth(p1.getHealth()-5);
@@ -336,12 +363,11 @@ public class MainScreen extends javax.swing.JFrame {
 
         }
 
-    }                                      
+    }//GEN-LAST:event_Radio2ActionPerformed
 
-    private void Radio1ActionPerformed(java.awt.event.ActionEvent evt) {                                       
+    private void Radio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Radio1ActionPerformed
         if (storyCount == 1) {
             i = 7;
-            System.out.println("i: " + i);
         }
 
         if (storyCount == 2) {
@@ -362,7 +388,7 @@ public class MainScreen extends javax.swing.JFrame {
             }
 
         }
-    }                                      
+    }//GEN-LAST:event_Radio1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -498,7 +524,7 @@ public class MainScreen extends javax.swing.JFrame {
         } //Chapter 6
         else if (storyCount == 6) {
             MainStoryText.setText(f.getSixPart(i, p1.getName()));
-            choiceConfirm.setText("Restart");
+            choiceConfirm.setText("Restart Game");
             i = 0;
         }
 
@@ -516,7 +542,6 @@ public class MainScreen extends javax.swing.JFrame {
     //sets player name from settings
     public void newName(String name) {
         p1.setName(name);
-        System.out.println(p1.getName());
     }
 
     //gets new font size from settings
@@ -525,7 +550,6 @@ public class MainScreen extends javax.swing.JFrame {
         MainStoryText.setFont(new java.awt.Font("Segoe UI", 0, areaFontSize));
         MainStoryText.repaint();
         repaint();
-        System.out.println(areaFontSize);
     }
 
     //for save file
@@ -553,7 +577,12 @@ public class MainScreen extends javax.swing.JFrame {
         return this.areaFontSize;
     }
     
+    public String getSaveString(){
+        return this.saveString; //called to retrive progress of game
+    }
+    
     //for loading
+    @Override
     public void setName(String name) {
         p1.setName(name);
     }
@@ -568,6 +597,7 @@ public class MainScreen extends javax.swing.JFrame {
 
     public void setStream(int newStream) {
         n = newStream;
+        
     }
     
     public void getState(int newState){
@@ -577,9 +607,11 @@ public class MainScreen extends javax.swing.JFrame {
     public void setAreaFontSize(int size) {
         this.areaFontSize = size;
     }
+    
+    
 
 
-    // Variables declaration - do not modify                     
+    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel DeathMessage;
     private javax.swing.JButton MainSettingsButton;
     private javax.swing.JTextArea MainStoryText;
@@ -593,5 +625,5 @@ public class MainScreen extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField2;
-    // End of variables declaration                   
+    // End of variables declaration//GEN-END:variables
 }
