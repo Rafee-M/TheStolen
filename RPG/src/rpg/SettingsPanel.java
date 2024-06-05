@@ -4,16 +4,12 @@
  */
 package rpg;
 
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.IOException;
 import javax.swing.JFileChooser;
-import javax.swing.JTextField;
 
 /**
  *
@@ -26,12 +22,14 @@ public class SettingsPanel extends javax.swing.JFrame {
      */
     public SettingsPanel() {
         initComponents();
+        this.setResizable(false); // Make the frame not resizable
     }
     
     public SettingsPanel(int x, int y) {
         
         this.setLocation(x, y);
         initComponents();
+        this.setResizable(false); // Make the frame not resizable
     }
 
     /**
