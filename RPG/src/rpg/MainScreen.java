@@ -33,14 +33,14 @@ public class MainScreen extends javax.swing.JFrame {
     public MainScreen() {
         
         initComponents();
-        //choiceConfirmActionPerformed(null); //// Invoke the method once when the app starts
+        this.setResizable(false); // Make the frame not resizable
     }
     
     public MainScreen(int x, int y) {
         
         initComponents();
         this.setLocation(x, y);
-        //choiceConfirmActionPerformed(null); //// Invoke the method once when the app starts
+        this.setResizable(false); // Make the frame not resizable
     }
     
     //constructor overloading. Used when game state is loaded from settings
