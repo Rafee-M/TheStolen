@@ -33,7 +33,7 @@
 
 It is part of a university course project, so outside pull requests aren't needed. But feel free to open issues regarding bugs and feature requests!
 
-![The Stolen](https://raw.githubusercontent.com/Rafee-M/TheYoungWitcher/main/docs/images/preview/code%20preview%20-%201.png)
+![The Stolen](https://raw.githubusercontent.com/Rafee-M/TheYoungWitcher/main/docs/images/logo/code-preview.png)
 <p align="right">
 <sub>(Preview)</sub>
 </p>
@@ -51,6 +51,11 @@ It is part of a university course project, so outside pull requests aren't neede
 - Each user choice has an 
 - Foundation of the story
    - **Background:** In the medieval era, darkness descends upon villages, swallowing them whole without a trace. As a young adult residing in one such village, you witness the unexplained vanishings firsthand. When your own family succumbs to the mysterious fate, leaving you bereft and alone, you resolve to unravel the enigma. With courage as your armor, you venture into the dense, foreboding forest that harbors secrets darker than the night itself, determined to uncover the truth and rescue your loved ones from the clutches of the unknown.
+ 
+#### Screenshots:
+ | <img src="docs/screenshots/StartingScreen.png" width="350"/> | <img src="docs/screenshots/SettingsPanel.png" width="350"/> | <img src="docs/screenshots/MainScreen.png" width="350"/> |
+| :--: | :--: | :--: |
+|Start Screen|Main Screen|Settings Panel|
 
 ## Roadmap:
 - ~Addition of more classes: monster, story choice levels, etc~
