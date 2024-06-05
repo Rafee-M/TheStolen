@@ -1,5 +1,10 @@
 package rpg.project;
 
+/**
+ *
+ * @author Rafee-M
+ */
+
 public class Two {
 
     public String getTwoPart(int n, String playerName) {
@@ -73,10 +78,13 @@ public class Two {
         return ("""
             Garrick pulls out a flint and steel, striking them together to create sparks. The dry twigs catch, and soon a small flame begins to dance. The fire grows, its warmth a welcome comfort against the encroaching cold.
             But as the fire consumes the twigs, it spreads to the surrounding underbrush, faster than we anticipated. Panic seizes us as flames leap to the low-hanging branches, igniting the dry leaves. The forest, so serene and protective, turns hostile in an instant.
+
             "Quick, get water!" I shout, but it's too late. The fire spreads with terrifying speed, fueled by the dry forest floor and the thick canopy above. Smoke billows around us, stinging our eyes and filling our lungs with acrid fumes.
             In the chaos, I lose sight of Theron. "Theron! Garrick! Bran!" I call out, but my voice is swallowed by the roar of the flames.
+
             The fire surrounds us, a blazing inferno that consumes everything in its path. Garrick's cries of pain pierce the air, followed by a horrifying silence. I stumble through the smoke, trying to find my friends, my brother, but the heat is unbearable. My skin blisters, and every breath is agony.
             Despair grips me as I realize there is no escape. In my final moments, I fall to my knees, the flames closing in. Through the haze of pain and smoke, I send a silent prayer to the heavens.
+
             "Alara, my daughter, may you be safe. I failed to save you, but may your spirit find peace."
             The fire engulfs me, and darkness overtakes my vision. Our quest ends in tragedy, the forest reclaiming us in a fiery embrace.
             """.formatted(playerName));
