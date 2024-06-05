@@ -8,6 +8,7 @@
 <div align="center">
   
 [![forthebadge](https://forthebadge.com/images/badges/made-with-java.svg)](https://github.com/Rafee-M/TheYoungWitcher)
+[<img src= "docs/images/logo/get-it-on-github(1).png" alt="Download from GitHub" height="38">](https://github.com/BrightDV/BoxBox/releases/latest)
 
    [![Visits](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fhits.dwyl.com%2FRafee-M%2FTheYoungWitcher.json&query=%24.message&style=flat&logo=github&label=visits&color=brightgreen)]()
    [![Last Commit](https://img.shields.io/github/last-commit/Rafee-M/TheYoungWitcher.svg?style=flat&logo=github&logoColor=white)](https://github.com/Rafee-M/TheYoungWitcher/commits/main)
