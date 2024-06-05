@@ -17,6 +17,7 @@ public class StartingScreen extends javax.swing.JFrame {
         public StartingScreen() {
         initComponents();
         setLocationRelativeTo(null); // Set start position to center of the screen
+        this.setResizable(false); // Make the frame not resizable
     }
     
     
