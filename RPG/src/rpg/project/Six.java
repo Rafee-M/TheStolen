@@ -1,36 +1,58 @@
 package rpg.project;
 
+/**
+ *
+ * @author Rafee-M
+ */
+
+import rpg.RNG;
+
 public class Six {
 
-    public String getSixPart(int n, String playerName){
-        if(n==0)
-            this.getSixAAA();
-        else if(n==1)
-            this.getSixAAB();
-        else if(n==2)
-            this.getSixBBA();
-        else if(n==3)
-            this.getSixBBB();
-        else if(n==4)
-            this.getSixCBA();
-        else if(n==5)
-            this.getSixCBB();
-        else if(n==6)
-            this.getSixDCA();
-        else
-            this.getSixDCB();
-        
-        switch(n){
-            
-            case 4:
-                
+    public String getSixPart(int n, String playerName) {
+
+        RNG r1 = new RNG();
+        switch (n) {
+
+            case 4: {
+                if (r1.generate() <= 15) {
+                    return getSixAAA(playerName); //if 0-15, good ending
+                } else {
+                    return getSixAAB(playerName); //if 16-20, bad ending
+                }
+            }
+            case 5: {
+                if (r1.generate() <= 15) {
+                    return getSixBBA(playerName); //if 0-15, good ending
+                } else {
+                    return getSixBBB(playerName); //if 16-20, bad ending
+                }
+            }
+            case 7: {
+                if (r1.generate() <= 15) {
+                    return getSixCBA(playerName); //if 0-15, good ending
+                } else {
+                    return getSixCBB(playerName); //if 16-20, bad ending
+                }
+            }
+            case 9: {
+                if (r1.generate() <= 15) {
+                    return getSixDCA(playerName); //if 0-15, good ending
+                } else {
+                    return getSixDCB(playerName); //if 16-20, bad ending
+                }
+            }
+            default:
+                return "FATAL ERROR: Story not found";
+
         }
-        
-        
+
     }
-    
-    private String getSixAAA(String playerName){
-        return("""
+
+    private String getSixAAA(String playerName) {
+        return ("""
+            [Good Ending]
+                
             The battle is fierce. The creature uses its dark magic to hurl fire and lightning, but I dodge and parry, driven by my fury. Garrick shouts encouragement while Bran fights desperately to defeat him.
             Kaldor and I clash in a storm of steel and magic. It tries to use my sword against me, but my will and the bond with the sword are too strong. The creature's attacks grow more desperate, and I see an opening.
 
@@ -41,14 +63,18 @@ public class Six {
             The battle won, I stand over the remains of the creature, breathing heavily. Garrick and Bran approach, battered but alive. We bind the traitorous villager, ensuring he will face justice.
             The journey back to Willowbrook is somber. The weight of Theron's death hangs heavy over us, but there is also a sense of closure. The threat has been vanquished, and our village is safe.
             As we enter Willowbrook, I am greeted by my daughter, her eyes wide with relief and joy. I kneel and embrace her, the warmth of her presence soothing the ache in my heart.
+
             "Papa, you're home," she whispers.
             "Yes," I reply, holding her close. "I'm home."
+
             The village gathers to welcome us back, and while there is mourning for those lost, there is also celebration for our return. The journey has been long and fraught with peril, but we have triumphed. And though the scars of loss will never fully heal, we find solace in the strength of our community and the bonds of family.
             The end of one journey marks the beginning of another, and with my daughter by my side, I know that together, we can face whatever the future holds.""".formatted(playerName, playerName, playerName, playerName));
     }
-    
-    private String getSixAAB(String playerName){
-        return("""            
+
+    private String getSixAAB(String playerName) {
+        return ("""     
+            [Bad Ending]
+                
             In a desperate move, Kaldor conjures a blade of shadow and strikes at me with my own sword.
             Pain explodes in my chest as the blade pierces my heart. I fall to my knees, my vision dimming. Kaldor stands over me, triumphant, the dark energy of the sword now flowing into him.
             Garrick, having defeated Bran, rushes to my side. "%s, no!"
@@ -61,12 +87,13 @@ public class Six {
             The forest falls silent as the battle ends. Garrick, bloodied and exhausted, kneels by %s's side, tears streaming down his face. Kaldor, now more powerful than ever, raises the ancestral sword, its dark energy pulsating.
             "This is only the beginning," Kaldor declares, his voice echoing through the clearing. "The power of this sword is mine, and soon, the world will bow to me."
             Garrick, grief-stricken but determined, swears vengeance. "You will pay for this, Kaldor. I will see to it."
+
             The legacy of %s and his family may have ended, but the fight against darkness continues, with new heroes rising from the ashes of betrayal and loss. The story of Willowbrook and its brave leader will live on in the hearts of those who fight for justice and honor, even in the face of overwhelming evil.""".formatted(playerName, playerName, playerName, playerName));
     }
-    
-    private String getSixBBA(String playerName){
-        return("""
-            
+
+    private String getSixBBA(String playerName) {
+        return ("""
+            [Good Ending]
             Part 8: The False Hope and the Final Showdown
 
             The grief of Theron's loss weighs heavily on us as we continue our journey. The forest seems darker, each step more laborious than the last. Suddenly, I see a figure in the distance-a familiar face that makes my heart leap. Could it be one of our missing villagers?
@@ -107,12 +134,14 @@ public class Six {
             Returning to the village, we're greeted with cheers and tears of joy. The villagers we rescued reunite with their families, and there's a palpable sense of relief and celebration in the air.
             I stand with Garrick, looking out over the village. "We did it," I say, a mix of pride and exhaustion in my voice.
             "Yes, we did," Garrick agrees, clapping me on the back. "We honored Theron's memory, and we saved our people."
+
             As the sun sets on Willowbrook, I feel a profound sense of peace. Our journey has been long and arduous, marked by loss and betrayal, but also by courage and hope. With my daughter safe and our village united, I know we can face whatever challenges lie ahead.
             We are home. And we are stronger than ever.""");
     }
-    
-    private String getSixBBB(String playerName){
-        return("""
+
+    private String getSixBBB(String playerName) {
+        return ("""
+            [Bad Ending]
             Part 8: The Final Showdown
 
             As we continue our journey, the forest around us grows increasingly dense and oppressive. The path ahead is shrouded in mist, the trees seeming to close in on us. Suddenly, through the haze, I see a familiar face-a dear friend long thought lost.
@@ -145,12 +174,15 @@ public class Six {
             The battle ends with the abductors defeated and the villagers free. Bran, realizing he has lost more than he gained, disappears into the forest, the ancestral sword still clutched in his hand.
             As dawn breaks, Garrick and the surviving villagers gather around %s's lifeless form. His daughter weeps, her cries echoing through the now silent forest. Garrick places a comforting arm around her shoulders, his own eyes filled with tears.
             "We'll make sure his sacrifice wasn't in vain," he says softly. "We'll rebuild, and we'll honor his memory."
+
             Together, they begin the journey back to Willowbrook, carrying the weight of loss but also the hope of a new beginning. Alara holds her head high, determined to honor her father's legacy and lead the village with the strength and courage he had shown.
             And so, the tale of the stolen villagers and the brave leader who gave everything to save them comes to a close, a story of betrayal, sacrifice, and the enduring power of love and hope.""".formatted(playerName, playerName, playerName, playerName));
     }
-    
-    private String getSixCBA(String playerName){
-        return("""        
+
+    private String getSixCBA(String playerName) {
+        return ("""
+            [Good Ending]
+        
             In the midst of the battle, Bran suddenly turns on us, his eyes filled with a sinister determination. "I've waited long enough, %s," he sneers. "The power of the ancestral sword should be mine."
             Shock and disbelief wash over me as Bran lunges, wielding the very sword I had traded away. His strikes are fierce and relentless, driven by a dark ambition.
             "Bran, why?" I gasp, parrying his blows. "We trusted you!"
@@ -172,10 +204,11 @@ public class Six {
             With our group reunited and the villagers safe, we begin the journey back to Willowbrook. The path is long, but our hearts are light, filled with the promise of a new dawn and the strength of the bonds we've forged.
             This marks the end of our quest, but it is also the beginning of a new chapter. Together, we will rebuild, heal, and move forward, forever changed by the trials we've faced and the lessons we've learned.""".formatted(playerName, playerName, playerName, playerName));
     }
-    
-    private String getSixCBB(String playerName){
-        return("""
-                           
+
+    private String getSixCBB(String playerName) {
+        return ("""
+            [Bad Ending] 
+                              
             In the midst of the chaos, I hear Bran's voice shout, "Stop!" He steps forward, but instead of joining our side, he stands with the abductors. My heart sinks as realization dawns.
             "Bran, what are you doing?" I ask, disbelief clear in my voice.
   
@@ -197,11 +230,14 @@ public class Six {
             Epilogue:
             As the dust settles, Kael is the only one left standing. He gathers Alara in his arms as she weeps over her father's lifeless body, her sobs echoing through the clearing. The villagers have fled to safety, but the price of their freedom is the loss of their leader and his companions.
             Kael, his eyes filled with sorrow and determination, swears to protect Alara and the remaining villagers. The forest, once a place of hope and adventure, now stands as a silent witness to the tragedy that has unfolded.
+
             Alara's cries linger in the air as Kael leads her away, leaving behind the fallen heroes. The legacy of the ancestral sword and the story of 'The Stolen' ends in heartbreak, but the spirit of their sacrifice will live on in the hearts of those they fought to save.""".formatted(playerName, playerName, playerName, playerName));
     }
-    
-    private String getSixDCA(String playerName){
-        return("""
+
+    private String getSixDCA(String playerName) {
+        return ("""
+            [Good Ending]
+
             With a final, mighty swing, I drive my sword deep into Kaldor's heart. The creature lets out a deafening scream as dark energy erupts from its body, dissipating into the air. Kaldor falls to the ground, lifeless, the dark magic that bound my friends fading away.
             Breathing heavily, I look around. Garrick stands over Kael's beaten form, his chest heaving with exertion. Bran and Theron rush to my side, relief evident on their faces.
             "We did it," Bran says, his voice shaky.
@@ -213,14 +249,18 @@ public class Six {
             Epilogue:
             Days later, we finally reach our village. The sight of Willowbrook brings tears to my eyes. We are greeted by our families and friends, their faces filled with joy and relief.
             I see my daughter running towards me, her arms outstretched. I kneel down, embracing her tightly, feeling the warmth and love that I fought so hard to protect.
+
             "You're home," she whispers, her voice filled with happiness.
             "Yes, I'm home," I reply, holding her close. "And I promise, I'll never let anything take me away from you again."
+
             As we stand together, surrounded by our loved ones, I know that we've emerged stronger from this ordeal. We've faced darkness and betrayal, but in the end, it's our love and determination that have brought us back home.
             And as I look at my ancestral sword, I know that its true power lies not in the magic it holds, but in the courage and unity of those who wield it.""".formatted(playerName, playerName, playerName, playerName));
     }
-    
-    private String getSixDCB(String playerName){
-        return("""              
+
+    private String getSixDCB(String playerName) {
+        return ("""
+            [Bad Ending]
+                              
             As the battle rages, Bran reveals the cruel truth. "The villagers, your daughter-they were killed long before you left the village. This quest was just a trap to draw you out."
             His words pierce my heart. The image of my daughter, her laughter and bright eyes, fills my mind, now forever silenced. Grief and rage surge within me, a torrent of emotions too powerful to contain.
             
@@ -236,6 +276,7 @@ public class Six {
             Epilogue:
             Garrick, Theron, and Kael watch in horror, still bound by the Kaldor's magic. As %s's life fades, so does Kaldor's power. With a final roar, it dissipates, leaving behind a shattered sword and a broken group of survivors.
             Tears stream down their faces, their cries echoing through the now silent forest. The journey has ended in tragedy, the true cost of their quest laid bare.
+
             In the depths of the forest, where light rarely penetrates, the echoes of love, loss, and betrayal linger, a haunting reminder of the price of power and the pain of loss.""".formatted(playerName, playerName, playerName, playerName));
     }
 }
