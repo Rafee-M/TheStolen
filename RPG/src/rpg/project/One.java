@@ -1,5 +1,10 @@
 package rpg.project;
 
+/**
+ *
+ * @author Rafee-M
+ */
+
 public class One {
 
     public String getOnePart(int n, String playerName){
