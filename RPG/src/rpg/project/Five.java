@@ -1,5 +1,10 @@
 package rpg.project;
 
+/**
+ *
+ * @author Rafee-M
+ */
+
 public class Five {
 
     public String getFivePart(int n, String playerName) {
@@ -21,7 +26,7 @@ public class Five {
         }
     }
     
-    public String getFiveA(String playerName){
+    private String getFiveA(String playerName){
         return("""
             The days following Theron's death are shrouded in a haze of grief and melancholy. The once vibrant forest now feels oppressive, its colors muted and the air heavy with sorrow. Every step forward is a painful reminder of the loss we've suffered. My heart feels like a leaden weight in my chest, and the world around me seems dim and distant.
             Garrick and Bran remain close, their presence a silent comfort, but their own grief mirrors mine. We travel in a somber silence, the memories of Theron haunting every moment.
@@ -58,7 +63,7 @@ public class Five {
             """.formatted(playerName, playerName, playerName, playerName));
     }
     
-    public String getFiveBB(String playerName){
+    private String getFiveBB(String playerName){
         return("""
             
             In the midst of the chaos, a familiar figure appears-Alaric, the merchant. His eyes glint with betrayal as he joins the bandits, brandishing my ancestral sword.
@@ -79,22 +84,25 @@ public class Five {
             """.formatted(playerName, playerName, playerName, playerName));
     }
     
-    public String getFiveCB(String playerName){
+    private String getFiveCB(String playerName){
         return("""
-            
             Part 8: Betrayal and Redemption
+               
             The jungle's thick canopy shields us from the harsh midday sun as we continue our journey. The path is arduous, but the thought of rescuing our loved ones keeps us moving forward. Suddenly, through the dense foliage, I see a familiar face-my daughter, Alara. My heart leaps with hope.
             "Alara!" I shout, rushing forward. But as I approach, the figure vanishes, dissolving into the shadows. It was nothing more than a trick of the light, a cruel illusion.
             Garrick places a reassuring hand on my shoulder. "We'll find her, %s. Don't let this discourage you."
             I nod, steeling myself. We must press on.
+            
             After hours of trekking, we come across a clearing that emanates an ominous aura. Hidden among the trees is a dilapidated building, shrouded in darkness despite the daylight. We cautiously approach, hearing faint cries for help from within.
             "It's them," Garrick whispers, his eyes wide with recognition. "The villagers... and your daughter. They're in there."
+            
             We ready our weapons and burst into the building. Inside, the air is thick with the smell of damp and decay. In a large, dimly lit room, we find a group of villagers, including Alara, bound and guarded by a band of menacing abductors.
             "Let them go!" I shout, brandishing my sword. The abductors snarl and rush at us, weapons drawn.
+
             The room erupts into chaos. Garrick's hammer swings with thunderous force, taking down several abductors with each blow. Theron fights bravely by my side, his determination unwavering despite the odds. Kael, though still weak, manages to aid us with quick, strategic strikes.""".formatted(playerName, playerName, playerName, playerName));
     }
     
-    public String getFiveC(String playerName){
+    private String getFiveC(String playerName){
         return("""
             Part 8: The Final Confrontation
             As we continue down the path, a sense of unease begins to creep over us. The forest, once vibrant and full of life, starts to change. The air grows colder, and a strange fog rolls in, obscuring the way ahead. The trees seem twisted and gnarled, their branches clawing at the sky like skeletal hands. Shadows move unnaturally, and the usual sounds of wildlife are replaced by an eerie silence.
