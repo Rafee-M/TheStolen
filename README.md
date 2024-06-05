@@ -53,7 +53,7 @@ It is part of a university course project, so outside pull requests aren't neede
    - **Background:** In the medieval era, darkness descends upon villages, swallowing them whole without a trace. As a young adult residing in one such village, you witness the unexplained vanishings firsthand. When your own family succumbs to the mysterious fate, leaving you bereft and alone, you resolve to unravel the enigma. With courage as your armor, you venture into the dense, foreboding forest that harbors secrets darker than the night itself, determined to uncover the truth and rescue your loved ones from the clutches of the unknown.
  
 #### Screenshots:
- | <img src="docs/screenshots/StartingScreen.png" width="350"/> | <img src="docs/screenshots/SettingsPanel.png" width="350"/> | <img src="docs/screenshots/MainScreen.png" width="350"/> |
+ | <img src="docs/images/screenshots/StartingScreen.png" width="350"/> | <img src="docs/images/screenshots/MainScreen.png" width="350"/> | <img src="docs/images/screenshots/SettingsPanel.png" width="350"/> |
 | :--: | :--: | :--: |
 |Start Screen|Main Screen|Settings Panel|
 
@@ -66,5 +66,9 @@ It is part of a university course project, so outside pull requests aren't neede
 - ~Build a minimalistic GUI with intuitive user interface and font size customisation for better accessibility~
 
 ## Choice Implementation:
-- A choice tree will be constructed for visualising the connection between choices and outcomes
-- Each major choice will be divided into separate classes. Example: first 3 major choices will be in Choice1 class and they will give connect to respective choices in Choice2 class
+- A choice tree has been constructed for visualising the connection between choices and outcomes
+- Each major choice will be divided into separate classes. Example: first 3 major choices will be in `One` class and they will give connect to respective choices in `Two` class
+  
+| <img src="docs/images/info/Choice-Map.png" width="400"/> |
+| :--: |
+|Choice Map|
