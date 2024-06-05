@@ -1,10 +1,11 @@
 package rpg.project;
 
-public class Three {
+/**
+ *
+ * @author Rafee-M
+ */
 
-    private String threeA;
-    private String threeB;
-    private String playerName;
+public class Three {
 
     public String getThreePart(int n, String playerName) {
         switch (n) {
