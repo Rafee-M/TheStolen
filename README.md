@@ -49,7 +49,7 @@ It is part of a university course project, so outside pull requests aren't neede
 - Customizable font size
 - Game saving and loading
 - RNG (Random Number Generation) for various player choices
-- Each user choice has an 
+- Each user choice has relevant impacts
 - Foundation of the story
    - **Background:** In the medieval era, darkness descends upon villages, swallowing them whole without a trace. As a young adult residing in one such village, you witness the unexplained vanishings firsthand. When your own family succumbs to the mysterious fate, leaving you bereft and alone, you resolve to unravel the enigma. With courage as your armor, you venture into the dense, foreboding forest that harbors secrets darker than the night itself, determined to uncover the truth and rescue your loved ones from the clutches of the unknown.
  
